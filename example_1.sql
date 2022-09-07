@@ -19,7 +19,10 @@ order by visitors desc;
 
 /*
     The query will show number of unique visitors (deduplicated)
-    for the whole report suite
+    for the whole report suite.
+
+    No matter which reporting dimensions we use as long as we count
+    unique visitor IDs they will always be "deduplicated".
 */
 select
     to_date(date_time) as date,
