@@ -6,6 +6,7 @@
 select
     to_date(date_time) as date,
     username as report_suite,
+    channel as site_section,
     count(distinct concat(post_visid_high, post_visid_low)) as visitors
 from ADOBE_HITS_FACT
 where
@@ -34,5 +35,5 @@ where
     exclude_hit = 0
     and username = 'your_report_suite_id'
     and date = '2022-09-07'
-group by 1,2,3
+group by 1,2
 order by visitors desc;
